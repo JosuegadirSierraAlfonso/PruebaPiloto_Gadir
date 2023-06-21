@@ -1,3 +1,3 @@
 USE campusland;
 
-SELECT * FROM teachers;
+SELECT * FROM areas;
