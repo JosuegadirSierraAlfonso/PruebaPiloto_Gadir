@@ -39,7 +39,6 @@ class areas extends connect{
             $res->bindValue("identificador", $this->id);
             $res->bindValue("nombre_area", $this->name_area);
             $res->execute();
-            //! Hace falta revisar la validación
             if ($res->rowCount() > 0){
                 $this->message = ["Code" => 200, "Message" => "Data updated"];
             }
