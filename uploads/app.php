@@ -37,5 +37,5 @@
 
     spl_autoload_register("autoload");
 
-    countries::getInstance(json_decode(file_get_contents("php://input"), true))->getAllCountries();
+    regions::getInstance(json_decode(file_get_contents("php://input"), true))->getAllRegions();
 ?>
