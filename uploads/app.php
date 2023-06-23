@@ -1,20 +1,12 @@
 <?php
-    trait getInstance{
-        static $instance;
-        static function getInstance(){
-            $arg = func_get_args();
-            $arg = array_pop($arg);
-            if (self::$instance == null){
-                self::$instance = new self(...(array) $arg);
-            }
-            return self::$instance;
-        }
-        function __set($name, $value){
-            $this->name = $value;
-        }
-    }
+    require_once "../vendor/autoload.php";
 
-    function autoload($class){
+    error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+    \App\areas::getInstance(json_decode(file_get_contents("php://input"), true))->getAllAreas();
+
+/*     function autoload($class){
         $directories = array();     
         $directorio = dirname(__DIR__) . '/scripts';     
         $elementos = scandir($directorio);     
@@ -35,7 +27,7 @@
         }
     }
 
-    spl_autoload_register("autoload");
+    spl_autoload_register("autoload"); */
 
-    regions::getInstance(json_decode(file_get_contents("php://input"), true))->getAllRegions();
+    
 ?>
